@@ -9,23 +9,28 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
     </head>
     <body>
-        <div class="container" ng-controller="StudentCtrl">
+        <div class="container">
             <div class="row">
 
-                <div class="col-md-12" ng-show="students.length">
+                <div class="col-md-12" ng-controller="StudentCtrl">
                     <h4> Search Students </h4>
                     <form class="form-inline" role="form">
                         <div class="form-group">
                             <input ng-model="query" type="text" class="form-control" placeholder="Search">
                         </div>
                     </form>
-                    <h2 ng-show="students.length && filtered.length">Student List</h2>
-                    <h2 ng-show="students.length && !filtered.length">No Matches</h2>
+
                     <ul>
                         <li ng-repeat="item in filtered = (students | filter:query)">
+                            <!-- Editing does not exist so it falsey  -->
+                            <!-- Click here, editing turns to true, ng-hide hides when editing true, so this span hides -->
                             <span ng-click="editing = true" ng-hide="editing">
+                </div>
+                <div class="col-md-12" ng-controller="StudentCtrlDelete">
                                 {{ item.name }} {{ item.age }} <a ng-click="deleteStudent(item)">Delete</a>
                             </span>
+
+
                             <span class="form-group" ng-show="editing" ng-submit="editing = false">
                                 <form class="form-inline" role="form">
                                     <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name" required/>
@@ -34,6 +39,7 @@
                             </span>
                         </li>
                     </ul>
+                </div>
                 </div>
                 <div class="col-md-4">
                     <h2>New Student</h2>

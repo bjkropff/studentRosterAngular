@@ -10,3 +10,10 @@ studentRoster.controller('StudentCtrl', function StudentCtrl($scope) {
         $scope.students.splice(index, 1)
     }
 });
+studentRoster.controller('StudentCtrlDelete', function StudentCtrlDelete($scope) {
+    $scope.deleteStudent = function($student) {
+        var index = $scope.students.indexOf(student);
+        $scope.students.splice(index, 1)
+    }
+
+});
