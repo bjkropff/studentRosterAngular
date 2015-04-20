@@ -16,8 +16,6 @@ Angular Framework
 <br>
 HTML
 <br>
-HTML
-<br>
 CSS
 
 
