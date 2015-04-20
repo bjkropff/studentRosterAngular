@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentRoster">
+    <head>
+        <meta charset="UTF-8">
+        <title>Student App</title>
+        <script src="lib/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="js/StudentController.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container" ng-controller="StudentCtrl">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <h1>Student List</h1>
+                    <ul>
+                        <li ng-repeat="item in students">
+                        {{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
